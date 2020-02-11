@@ -4,10 +4,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] nums = new int[5];
+        final int MAX_ARRAY = 5;
+        int[] nums = new int[MAX_ARRAY];
         int contador;
+        int[] prueba = null;
         contador = leerNumeros(nums);
         imprimirNumeros(nums, contador);
+        leerNumeros(prueba);
     }
 
     /**
@@ -38,14 +41,14 @@ public class Main {
                     n[contador] = Integer.parseInt(lector.nextLine());//Leemos el número
                     contador++;
                     validado = true;
-                }catch (NumberFormatException nfe){//Atrapamos la excepción
+                }catch (NumberFormatException nfe){//Atrapamos la excepción de conversión a numeros
                     validado = false;//No está validado
                     System.out.println("Solo números por favor");
-                }catch (ArrayIndexOutOfBoundsException aiob){
+                }catch (ArrayIndexOutOfBoundsException aiob){//Atrapamos la excepción de out of bounds
                     System.out.println("No es posible almacenar más números");
                     salir = true;
                     validado = true;
-                }catch (NullPointerException npe){
+                }catch (NullPointerException npe){//Si el array está a null, capturamos la excepcion
                     System.out.println("El array no ha sido inicializado");
                     salir = true;
                     validado = true;

@@ -19,6 +19,12 @@ public class Main {
             System.out.println("El mayor número introducido es: " + mayor);
         }
     }
+
+    /**
+     * Método para leer números, validándolos
+     * @param n array a llenar
+     * @return devolvemos el número de elementos a iterar
+     */
     private static int leerNumeros(double[] n){
         boolean letra = false;
         int contador = 0;
@@ -39,18 +45,16 @@ public class Main {
         }
         return contador;
     }
+
+    /**
+     * Método para conseguir el número mayor
+     * @param n array a valorar
+     * @param contador numero de elementos a iterar
+     * @return devolvemos el número mayor
+     */
     public static double conseguirMayor2(double[] n, int contador){
         double mayor = Double.MIN_VALUE;
         for (int i = 0; i < contador; i++) {
-            if (mayor < n[i]){
-                mayor = n[i];
-            }
-        }
-        return mayor;
-    }
-    public static double conseguirMayor2(double[] n){
-        double mayor = Double.MIN_VALUE;
-        for (int i = 0; i < n.length; i++) {
             if (mayor < n[i]){
                 mayor = n[i];
             }
